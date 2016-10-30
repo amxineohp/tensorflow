@@ -216,7 +216,7 @@ DataTypeVector RealNumberTypes() {
 }
 
 DataTypeVector NumberTypes() {
-  return {DT_FLOAT,  DT_INT32,  DT_INT64, DT_QINT8,
+  return {DT_FLOAT,  DT_INT32,   DT_INT64, DT_QINT8,
           DT_QUINT8, DT_QINT32, DT_HALF};
 }
 
@@ -231,7 +231,7 @@ DataTypeVector RealAndQuantizedTypes() {
 
 #else  // defined(IS_MOBILE_PLATFORM) && !defined(__ANDROID_TYPES_FULL__)
 
-DataTypeVector RealNumberTypes() { return {DT_FLOAT, DT_INT32}; }
+DataTypeVector RealNumberTypes() { return {DT_DOUBLE, DT_FLOAT, DT_INT32}; }
 
 DataTypeVector NumberTypes() {
   return {DT_FLOAT, DT_INT32, DT_QINT8, DT_QUINT8, DT_QINT32};
