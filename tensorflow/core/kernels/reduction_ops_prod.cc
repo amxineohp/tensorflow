@@ -24,7 +24,10 @@ namespace tensorflow {
           .TypeConstraint<type>("T")      \
           .TypeConstraint<int32>("Tidx"), \
       ReductionOp<CPUDevice, type, Eigen::internal::ProdReducer<type>>);
-TF_CALL_REAL_NUMBER_TYPES(REGISTER_CPU_KERNELS);
+//TF_CALL_REAL_NUMBER_TYPES(REGISTER_CPU_KERNELS);
+REGISTER_CPU_KERNELS(int32);
+REGISTER_CPU_KERNELS(float);
+REGISTER_CPU_KERNELS(double);
 #undef REGISTER_CPU_KERNELS
 
 #if GOOGLE_CUDA
